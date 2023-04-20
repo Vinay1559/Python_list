@@ -1,0 +1,337 @@
+# if statement
+val = input("Enter the number ")
+valu_float = float(val)
+if(valu_float%2==0):
+    print("number is Even")
+
+10%2
+
+# if statement
+val = input("Enter the number ")
+valu_float = float(val)
+if(valu_float%2==0):
+    print("number is Even")
+else:
+    print("number is odd")
+
+## age form
+age = float(input("ENTER THE AGE "))
+if(age<18):
+    print("Sorry! still child")
+    if(age<15):
+        print("GO To school")
+    else:
+        print("You are in college")
+elif(age>=18 and age<=35):
+    print("You can vote")
+elif(age>35 and age<=50):
+    print("mid age")
+else: 
+    print("senior citizen")
+
+## LOOPS
+## for Loop, While Loop
+lst=[1,2,3,4,5,6,7]
+sum1 = 0
+for i in lst:
+    print(i)
+    sum1 = sum1+i
+print(sum1)
+
+## find the sum of evel and odd number
+even_sum = 0
+odd_sum = 0
+ 
+for i in lst:
+    if(i%2==0):
+        even_sum = even_sum+i
+    
+    else:
+        odd_sum = odd_sum+i
+    
+print("even sum is {}".format(even_sum))
+print("odd sum is {}".format(odd_sum))
+
+## while condition
+i = 0
+even_sum=0
+odd_sum =0
+while(i<=10):
+   
+    if(i%2==0):
+        even_sum = even_sum+i
+    
+    else:
+        odd_sum = odd_sum+i
+    i=i+1
+    
+print("even sum is {}".format(even_sum))
+print("odd sum is {}".format(odd_sum))
+
+## break
+x=1
+while(x<7):
+    print(x)
+    if x==4:
+        break
+    
+    x=x+1
+
+## continue
+x=0
+while x<7:
+    x=x+1
+    if x==4:
+        continue
+    print(x)
+    
+
+set_var = set()
+print(set_var)
+print(type(set_var))
+
+set_var = {1,2,3,4,5,3}
+set_var
+
+set_var={'A','B','C','C'}
+set_var
+
+## inbuilt function
+# Index
+set_var['A']
+
+set_var.add('D')
+
+print(set_var)
+
+set1={'A','B','C'}
+set2={'D','A','F','B'}
+
+set2.difference(set1)
+
+set2.difference_update(set1)
+
+print(set2)
+
+set2.intersection_update(set1)
+
+set2
+
+dic={}
+type(dic)
+
+set_ex={1,2,3,4,5}
+type(set_ex)
+
+my_dict={"Car1":"Audi","Car2": "BMW", "CAR3": "Maruti"}
+
+type(my_dict)
+
+my_dict['Car1']
+
+for x in my_dict.values():
+    print(x)
+
+for x in my_dict.items():
+    print(x)
+    
+
+my_dict['Car4']='Audi'
+
+my_dict
+
+my_dict['Car1']='Maruti'
+
+my_dict
+
+car1_model={'Mercedes':1960}
+car2_model={'Audi':1970}
+car3_model={'Ambassador':1980}
+
+car_type={'car1':car1_model,'car2':car2_model,'car3':car3_model}
+
+print(car_type)
+
+print(car_type['car1']['Mercedes'])
+
+## Tuples
+
+my_tuple=tuple()
+
+type(my_tuple)
+my_tuple =()
+
+my_tuple=("Krish","Angfdi","kjdshf")
+
+
+my_tuple[0]='gh'
+
+## NUMPY 
+import numpy as np
+
+my_lst = [1,2,3,4,5]
+
+arr = np.array(my_lst)
+
+type(arr)
+
+print(arr)
+
+arr
+
+arr.shape
+
+
+my_lst1=[1,2,3,4,5]
+my_lst2=[2,3,4,5,6]
+my_lst3=[6,7,8,4,6]
+
+arr=np.array([my_lst1,my_lst2,my_lst3])
+
+arr
+
+arr.shape
+
+arr.reshape(3,5)
+
+# indexing Accessing the array elements
+arr[[3]]
+
+ar =np.array([1,2,3,4,65,4,8,5])
+
+ar[5]
+
+arr[1:2,1:4]
+
+arr=np.arange(0,10,step=2)
+
+arr
+
+np.linspace(1,100,500)
+
+## copy an broadcasting
+ar
+
+ar[3:]=500
+
+ar
+
+arr1=ar.copy()
+
+arr1
+
+arr1[2:]=1000
+
+arr1
+
+ar
+
+ar*1.5551
+
+val = 20
+ar[ar<20]
+
+np.ones(12)
+
+np.random.randn(3,3)
+
+## Pandas part 1
+import pandas as pd
+import numpy as np
+
+df = pd.DataFrame(np.arange(0,20).reshape(5,4),index=['Row1','Row2','Row3','Row4','Row5'],columns=['Column1','Column2','Column3','Column4'])
+
+df
+
+df.to_csv('test1.csv')
+
+ ## Accessing the elements - two ways
+    # 1. loc 2. iloc
+type(df.loc['Row1'])
+    
+
+df.iloc[0:1,0:3]
+
+df.iloc[:,:].values
+
+df.isnull().sum()
+
+df
+
+df['Column1'].value_counts()
+
+df['Column1'].unique()
+
+df[['Column3','Column2']
+
+df = pd.read_csv('mercedesbenz.csv')
+
+df
+
+df.head()
+
+df.info()
+
+df.describe()
+
+df['X0'].value_counts()
+
+df[df['y']>100]
+
+from io import StringIO, BytesIO
+
+data = ('col1,col2,col3\n'
+       'x,y,z\n'
+        'a,b,c\n'
+        'c,d,3')
+
+type(data)
+
+SrtingIO()
+
+StringIO()
+
+pd.read_csv(StringIO(data))
+
+pd.read_csv(StringIO(data),escapechar='\n')
+
+import pandas as pd
+
+## Read json to csv
+df = pd.read_csv('https://archive.ics.uci.edu/ml/machine-learning-databases/wine/wine.data', header=None)
+
+df.head()
+
+# convert jSON to csv
+df.to_csv('wine.csv')
+
+df.to_json(orient="records")
+
+## Reading HTML content 
+
+
+url = 'https://www.fdic.gov/bank/individual/failed/banklist.html'
+
+dfs = pd.read_html(url)
+
+
+
+!pip install html5lib
+
+import pandas as pd
+import numpy as np
+
+
+
+url_mcc = 'https://en.wikipedia.org/wiki/Mobile_country_code'
+
+dfs = pd.read_html(url_mcc,match='Mobile network codes', header=0)
+
+dfs[0]
+
+
+## EXCEL files
+
+df_excel=pd.read_excel('df_excel.xlsx')
+
+
